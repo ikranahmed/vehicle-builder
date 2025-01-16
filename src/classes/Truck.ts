@@ -35,7 +35,14 @@ class Truck extends Vehicle implements AbleToTow {
     wheels: Wheel[],
     towingCapacity: number
   ) {
-    super(vin, color, make, model, year, weight, topSpeed);
+    super();
+    this.vin = vin;
+    this.color = color;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
     this.towingCapacity = towingCapacity;
     // Check if the wheels array has 4 elements, otherwise create 4 new default Wheel objects
     this.wheels = wheels.length === 4 ? wheels : Array(4).fill(new Wheel());
@@ -59,7 +66,7 @@ class Truck extends Vehicle implements AbleToTow {
   // TODO: The method should call the printDetails method of the parent class
   // TODO: The method should log the details of the Truck
   // TODO: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
-  printDetails(): void {
+  override printDetails(): void {
     super.printDetails(); // Call the parent class's method
     console.log(`Towing Capacity: ${this.towingCapacity}`);
     console.log(`Wheels: ${this.wheels.length} wheels`);

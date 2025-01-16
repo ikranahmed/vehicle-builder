@@ -152,8 +152,8 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          new Wheel(answers.frontWheelBrand, parseInt(answers.frontWheelDiameter)),
-          new Wheel(answers.rearWheelBrand, parseInt(answers.rearWheelDiameter))
+          [new Wheel(parseInt(answers.frontWheelDiameter), answers.frontWheelBrand),
+          new Wheel(parseInt(answers.rearWheelDiameter), answers.rearWheelBrand)]
         );
         this.vehicles.push(motorbike);
         this.selectedVehicleVin = motorbike.vin;

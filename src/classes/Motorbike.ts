@@ -1,6 +1,6 @@
 // // Importing Vehicle and Wheel classes
-// import Vehicle from './Vehicle.js';
-// import Wheel from './Wheel.js';
+import Vehicle from './Vehicle.js';
+import Wheel from './Wheel.js';
 
 // // TODO: The Motorbike class should extend the Vehicle class
 // class Motorbike {
@@ -49,7 +49,7 @@ class Motorbike extends Vehicle {
     wheels: Wheel[]
   ) {
     // Call the constructor of the parent class, Vehicle
-    super(vin, color, make, model, year, weight, topSpeed);
+    super();
     // Initialize the properties of the Motorbike class
     this.vin = vin;
     this.color = color;
@@ -67,7 +67,7 @@ class Motorbike extends Vehicle {
   }
 
   // Override the printDetails method from the Vehicle class
-  printDetails() {
+  override printDetails() {
     // Call the printDetails method of the parent class
     super.printDetails();
     // Log the details of the Motorbike
